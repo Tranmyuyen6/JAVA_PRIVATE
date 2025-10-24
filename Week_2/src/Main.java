@@ -1,15 +1,41 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    static Scanner sc= new Scanner(System.in);
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("nhập số lượng ptu:");
+        int n = sc.nextInt();
+        int []a = new int[n];
+        Utils.nhapMang(a);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("---menu---");
+        System.out.println("1. Tính tổng các phẩn tử trong mảng");
+        System.out.println("2. In ra phần tử lớn nhất, nhỏ nhất trong mảng");
+        System.out.println("3. Sắp xếp lại mảng theo chiều tăng dần");
+        System.out.println("4. In ra số nguyên tố lớn nhất trong mảng (nếu không có in ra :Không có)");
+        System.out.println("Nhập lựa chọn:");
+
+        int total = sc.nextInt();
+        if(total<1 || total>4){
+            System.out.println("lựa chọn không hợp lệ, nhập lại");
+        }
+        else{
+            switch (total){
+                case 1:
+                    System.out.println(Utils.tinhTong(a));
+                    break;
+                case 2:
+                    Utils.findMaxMin(a);
+                    break;
+                case 3:
+                    Utils.sapXep(a);
+                    break;
+                case 4:
+                    Utils.findSoNgto(a);
+                    break;
+            }
         }
     }
 }
