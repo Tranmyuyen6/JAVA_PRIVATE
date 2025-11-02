@@ -5,21 +5,22 @@ import java.util.Scanner;
 import model.User;
 
 public class UserService {
-    public UserService() {
-    }
 
-    static Scanner sc = new Scanner(System.in);
-    static ArrayList<User> users = new ArrayList<>();
-    public static void getUserById(String userId){
-        System.out.println("nhập id người dùng: ");
-        userId = sc.nextLine();
+    private static ArrayList<User> users;
+
+    public UserService( ArrayList<User> users) {
+        this.users = users;
+    }
+    public static User getUserById(String userId){
         for(User user4 : users){
            if(user4.getId().equals(userId)){
-               user4.toString();
+               return user4;
            }
+
         }
+        return null;
     }
-    public static void getAllUsers(){
-        users.toString();
+    public static ArrayList<User> getAllUsers(){
+        return users;
     }
 }

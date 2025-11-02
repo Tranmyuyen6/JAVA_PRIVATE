@@ -1,5 +1,8 @@
 package model;
 
+import java.rmi.server.UID;
+import java.util.UUID;
+
 public class User {
     private String id;
     private String username;
@@ -10,28 +13,20 @@ public class User {
     public User() {
     }
 
-    public User(String id, String username, String password, String email, String phoneNumber) {
-        this.id = id;
+    public User( String username, String password, String email, String phoneNumber) {
+        this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String username, String password, String email, String phoneNumber) {
-    }
 
     public String getId() {
         return id;
     }
-
-
     public String getUsername() {
         return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
