@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<User> users = new ArrayList<>();
+        public ArrayList<User> users = new ArrayList<>();
         users.add(new User("a","a","a@gmail.com","0983643747"));
         users.add(new User("b","b","b@gmail.com","0649273777"));
         users.add(new User("c","c","c@gmail.com","0366275991"));
