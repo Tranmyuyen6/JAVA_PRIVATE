@@ -16,6 +16,8 @@ public class Animal {
         this.age = age;
     }
 
+
+
     public int getId() {
         return id;
     }
@@ -35,11 +37,10 @@ public class Animal {
     public void setAge(int age) {
         this.age = age;
     }
-    public boolean showInFo(){
-        System.out.println("Animal [ID: "+id +", NAME: "+name+", AGE: "+"]");
-        return false;
+    public void showInFo(){
+        System.out.println("Animal [ID: "+id +", NAME: "+name+", AGE: "+ age+"]");
     }
     public void makeSound(){
-        System.out.println("tieng keu: ");
+        System.out.print("tieng keu: ");
     }
 }

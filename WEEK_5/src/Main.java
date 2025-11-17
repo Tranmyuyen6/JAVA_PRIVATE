@@ -1,5 +1,8 @@
 import constant.Constant;
 import model.Animal;
+import model.Elephant;
+import model.Lion;
+import model.Monkey;
 import service.ZooService;
 
 import java.util.ArrayList;
@@ -13,11 +16,9 @@ public class Main {
     private static ZooService zooService = new ZooService(animals);
 
     public static void main(String[] args) {
-        animals.add(new Animal("hổ", 12));
-        animals.add(new Animal("chim", 21));
-        animals.add(new Animal("thỏ", 2));
-        animals.add(new Animal("mèo", 9));
-        animals.add(new Animal("chó", 5));
+        animals.add(new Elephant("hổ", 12, 3));
+        animals.add(new Lion("chim", 21, 45));
+        animals.add(new Monkey("thỏ", 2, "chuối"));
 
         int choose;
         do {
@@ -29,29 +30,8 @@ public class Main {
             }
             switch (choose){
                 case 1:
-                    String continuee;
-                    do {
-                        String name;
-                        int age;
-                        do {
-                            System.out.println(Constant.enter.NAME);
-                            name = sc.nextLine();
-                            if(name.isEmpty()){
-                                System.out.println(Constant.error.NAME);
-                            }
-                        }while (name.isEmpty());
-                        do {
-                            System.out.println(Constant.enter.AGE);
-                            age = Integer.parseInt(sc.nextLine());
-                            if(age <= 0){
-                                System.out.println(Constant.error.AGE);
-                            }
-                        }while (age <= 0);
 
-                        zooService.addAnimal(new Animal(name,age));
-                        System.out.println(Constant.enter.CONTINUEE);
-                        continuee = sc.nextLine();
-                    }while (continuee.equalsIgnoreCase("y"));
+                    zooService.addAnimal();
                     break;
                 case 2:
                     System.out.println(Constant.message.DANH_SACH_CON_VAT);
