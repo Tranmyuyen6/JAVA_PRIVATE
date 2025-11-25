@@ -13,16 +13,10 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     private static Scanner sc = new Scanner(System.in);
-    private static ArrayList<Employee> employees = new ArrayList<>();
 
+    private static IEmployeeServiceImpl iEmployeeService = new IEmployeeServiceImpl();
     public static void main(String[] args) {
-        employees.add(new Developer("huy",24, 2000,new Device("may tinh"),2));
-        employees.add(new Developer("duong",26, 7000,new Device("dien thoai"),9));
-        employees.add(new Developer("hoang",27, 4000,new Device("may tinh"),10));
-        employees.add(new Tester("duong", 34, 1000,new Device("may tinh"), 4));
-        employees.add(new Tester("ngoc", 21, 2000,new Device("tu lanh"), 12));
-
-        IEmployeeServiceImpl iEmployeeService = new IEmployeeServiceImpl(employees);
+        
         int choose;
         do {
             try{
@@ -33,7 +27,7 @@ public class Main {
             }
             switch (choose){
                 case 1:
-                    iEmployeeService.getAllEmployees()1;
+                    iEmployeeService.getAllEmployees();
                     break;
                 case 2:
                     System.out.println(Constant.enter.ID);

@@ -1,7 +1,10 @@
 package service.impl;
 
 import constant.Constant;
+import model.Developer;
+import model.Device;
 import model.Employee;
+import model.Tester;
 import service.IEmployeeService;
 
 import java.util.ArrayList;
@@ -9,10 +12,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class IEmployeeServiceImpl implements IEmployeeService {
-    private static ArrayList<Employee> employees;
+    private static ArrayList<Employee> employees = new ArrayList<>();
 
-    public IEmployeeServiceImpl(ArrayList<Employee> employees) {
-        this.employees = employees;
+    public IEmployeeServiceImpl() {
+        employees.add(new Developer("huy",24, 2000,new Device("may tinh"),2));
+        employees.add(new Developer("duong",26, 7000,new Device("dien thoai"),9));
+        employees.add(new Developer("hoang",27, 4000,new Device("may tinh"),10));
+        employees.add(new Tester("duong", 34, 1000,new Device("may tinh"), 4));
+        employees.add(new Tester("ngoc", 21, 2000,new Device("tu lanh"), 12));
     }
 
     @Override
